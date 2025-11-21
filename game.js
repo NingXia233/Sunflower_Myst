@@ -1,3 +1,13 @@
+// Game constants
+const GAME_CONFIG = {
+    CORNERS_COUNT: 5,
+    SUNFLOWER_COVERAGE_RADIUS: 60,
+    SUNFLOWER_CENTER_DOTS: 20,
+    TEAR_SPEED: 0.02,
+    SUN_ROTATION_SPEED: 0.02,
+    SUNFLOWER_ROTATION_SPEED: 0.01
+};
+
 // Game state
 const gameState = {
     sunflowers: [],
@@ -194,7 +204,7 @@ function drawSunflower(sunflower) {
     
     // Add center detail
     ctx.fillStyle = '#654321';
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < GAME_CONFIG.SUNFLOWER_CENTER_DOTS; i++) {
         const angle = Math.random() * Math.PI * 2;
         const distance = Math.random() * 12 * scale;
         const px = Math.cos(angle) * distance;
@@ -207,7 +217,7 @@ function drawSunflower(sunflower) {
 
 // Generate random corners on the wall
 function generateCorners() {
-    const numCorners = 5;
+    const numCorners = GAME_CONFIG.CORNERS_COUNT;
     const wallBounds = {
         left: canvas.width / 2 - 300,
         right: canvas.width / 2 + 300,
@@ -268,7 +278,7 @@ function createTearDrop(sunflower) {
         endX: endX,
         endY: endY,
         progress: 0,
-        speed: 0.02
+        speed: GAME_CONFIG.TEAR_SPEED
     };
     
     gameState.tears.push(tear);
@@ -320,7 +330,7 @@ function checkCornerCoverage() {
             const dy = corner.y - sunflower.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
             
-            if (distance < 60) {
+            if (distance < GAME_CONFIG.SUNFLOWER_COVERAGE_RADIUS) {
                 covered = true;
             }
         });
@@ -453,7 +463,7 @@ function animate() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     
     // Update sun angle
-    gameState.sunAngle += 0.02;
+    gameState.sunAngle += GAME_CONFIG.SUN_ROTATION_SPEED;
     
     // Draw sun
     drawSun();
@@ -466,7 +476,7 @@ function animate() {
     
     // Draw sunflowers
     gameState.sunflowers.forEach((sunflower, index) => {
-        sunflower.angle += 0.01;
+        sunflower.angle += GAME_CONFIG.SUNFLOWER_ROTATION_SPEED;
         drawSunflower(sunflower);
     });
     
