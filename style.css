@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #87CEEB 0%, #E0F6FF 100%);
+}
+
+#game-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+#game-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+#title {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    pointer-events: auto;
+}
+
+#title h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #FFD700;
+}
+
+#title p {
+    font-size: 1.2em;
+}
+
+#controls {
+    position: absolute;
+    top: 150px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    pointer-events: auto;
+    max-width: 300px;
+}
+
+.control-group h3 {
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 5px;
+}
+
+.control-group p {
+    color: #666;
+    margin: 8px 0;
+    font-size: 0.9em;
+}
+
+.stats {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.stats p {
+    color: #333;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.stats span {
+    color: #4CAF50;
+}
+
+#win-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    pointer-events: auto;
+}
+
+#win-message h2 {
+    color: #4CAF50;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#win-message p {
+    color: #666;
+    font-size: 1.3em;
+    margin-bottom: 30px;
+}
+
+#restart-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    pointer-events: auto;
+}
+
+#restart-btn:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Loading indicator */
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #title h1 {
+        font-size: 2em;
+    }
+    
+    #title p {
+        font-size: 1em;
+    }
+    
+    #controls {
+        max-width: 250px;
+        padding: 15px;
+        font-size: 0.9em;
+    }
+}
