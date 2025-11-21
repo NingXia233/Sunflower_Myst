@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunflower Myst</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #1a1a1a; }
+        #info {
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-family: monospace;
+            pointer-events: none;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">
+        Sunflower Myst<br>
+        Left Click: Make Sunflower Cry | Right Click/Drag: Rotate Wall<br>
+        Tears grow new life.
+    </div>
+    <!-- Import Three.js from CDN -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="game.js"></script>
+</body>
+</html>
