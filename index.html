@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>向日葵之谜 - Sunflower Mystery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="ui-overlay">
+            <div id="title">
+                <h1>向日葵之谜</h1>
+                <p>让太阳照射向日葵，见证生命的奇迹</p>
+            </div>
+            <div id="controls">
+                <div class="control-group">
+                    <h3>控制说明</h3>
+                    <p>🖱️ 鼠标拖拽 - 旋转墙壁</p>
+                    <p>☀️ 点击太阳 - 选择太阳</p>
+                    <p>🌻 点击向日葵 - 让向日葵流泪</p>
+                    <p>🎯 目标：让向日葵覆盖所有角落</p>
+                </div>
+                <div class="stats">
+                    <p>向日葵数量: <span id="sunflower-count">1</span></p>
+                    <p>覆盖角落: <span id="corner-count">0</span>/<span id="total-corners">0</span></p>
+                </div>
+            </div>
+            <div id="win-message" class="hidden">
+                <h2>🎉 恭喜过关！</h2>
+                <p>所有角落都长满了向日葵！</p>
+                <button id="restart-btn">重新开始</button>
+            </div>
+        </div>
+        <canvas id="game-canvas"></canvas>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
